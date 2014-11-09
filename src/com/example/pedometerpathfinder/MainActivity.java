@@ -103,30 +103,37 @@ public class MainActivity extends Activity implements SensorEventListener{
             SensorManager.getOrientation(mR, mOrientation);
             float azimuthInRadians = mOrientation[0];
             float azimuthInDegress = (float)(Math.toDegrees(azimuthInRadians)+360)%360;
-            if(azimuthInDegress > 337.5 && azimuthInDegress < 22.5) {
+            if(azimuthInDegress >= 337.5 && azimuthInDegress < 22.5) {
                  //Assign north 0
+                txtView3.setText("0");
             }
             else if (azimuthInDegress >=22.5 && azimuthInDegress < 67.5) {
                 //Assign northEast 1
-
+                txtView3.setText("1");
             }
             else if(azimuthInDegress >= 67.5 && azimuthInDegress < 112.5) {
                 //Assign East 2
+                txtView3.setText("2");
             }
             else if( azimuthInDegress >= 112.5 && azimuthInDegress < 157.5) {
                 //Assign southEast 3
+                txtView3.setText("3");
             }
             else if( azimuthInDegress >= 157.5 && azimuthInDegress <  202.5) {
                 //Assign south 4
+                txtView3.setText("4");
             }
             else if( azimuthInDegress >= 202.5 && azimuthInDegress < 247.5) {
                 //Assign SouthWest 5
+                txtView3.setText("5");
             }
             else if( azimuthInDegress >= 247.5 && azimuthInDegress < 292.5) {
                 //Assign WEst 6
+                txtView3.setText("6");
             }
             else if( azimuthInDegress >= 292.5 && azimuthInDegress < 337.5) {
                 //Assign NorthWest 7
+                txtView3.setText("7");
             }
 
             mCurrentDegree = -azimuthInDegress;
