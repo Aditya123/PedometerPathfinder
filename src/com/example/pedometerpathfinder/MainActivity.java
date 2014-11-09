@@ -19,6 +19,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 	Sensor mStepDetectorSensor;
     Sensor mAccelerometer;
     Sensor mMagnetoMeter;
+    int direction;
 
     private float[] mLastAccelerometer = new float[3];
     private float[] mLastMagnetometer = new float[3];
@@ -87,6 +88,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 
 	      if (sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
 	        txtView.setText("Step Counter Detected : " + steps);
+
 	     } else if (sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
 	    	 txtView2.setText("Step Detector Detected : " + value);
 	     }
@@ -103,7 +105,7 @@ public class MainActivity extends Activity implements SensorEventListener{
             SensorManager.getOrientation(mR, mOrientation);
             float azimuthInRadians = mOrientation[0];
             float azimuthInDegress = (float)(Math.toDegrees(azimuthInRadians)+360)%360;
-            if(azimuthInDegress >= 337.5 && azimuthInDegress < 22.5) {
+            if(azimuthInDegress >= 337.5 || azimuthInDegress < 22.5) {
                  //Assign north 0
                 txtView3.setText("0");
             }
@@ -142,6 +144,10 @@ public class MainActivity extends Activity implements SensorEventListener{
 
 
 	 }
+
+    protected void setDirection(int i){direction = i;}
+    protected int getDirection(){return direction;}
+
 		 
 	protected void onResume() {
 		super.onResume();
