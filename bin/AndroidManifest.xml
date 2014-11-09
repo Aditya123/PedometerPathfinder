@@ -5,9 +5,15 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
-        android:targetSdkVersion="16" />
-
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+    
+    <uses-feature 
+          android:name="@string/step_detector" android:required="false"/>
+    
+    <uses-feature 
+           android:name="@string/step_counter" android:required="false"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

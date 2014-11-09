@@ -1,0 +1,29 @@
+local.properties
+
+# Java Class File
+*.class
+
+# Files for Dalvik VM
+*.dex
+
+# Generated Files
+bin/
+gen/
+
+# Gradle Files
+.gradle/
+build/
+
+# Built application files
+*.apk
+*.ap_
+
+# Proguard files
+proguard/
+
+# Log files
+*.log
+
+# Intelij Files
+.idea
+.idea_modules
